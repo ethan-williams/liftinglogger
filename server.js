@@ -8,7 +8,9 @@ const mssql = require('mssql');
 const app = express();
 const port = 8080;
 
-// paser application/x-www-form-urlencoded
+const fruit = require('./fruit.js');
+
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
@@ -39,10 +41,18 @@ app.get('/form', function (req, res) {
 	res.sendFile(path.join(__dirname, '/src/components/LiftingDataEntryForm.html'));
 });
 
+app.get('/fruit', function (req, res) {
+	res.sendFile(path.join(__dirname, '/src/components/FruitCrushingDataEntryForm.html'));
+});
+
 app.post('/form', (req, res) => {
 	let data = req.body;
 	res.send('Data Received: ' + JSON.stringify(data));
-})
+});
+
+app.post('/fruit', (req, res) => {
+	res.send(fruit.comment(req.body.force));
+});
 
 let server = app.listen(5000, function () {
 	console.log('Server is listening on port 5000...');

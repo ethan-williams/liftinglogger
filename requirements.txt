@@ -1,0 +1,16 @@
+lifting log user flow
+> navigate to web app
+> login? this feature can come later
+> presented with user's previously recorded data
+> hamburger menu lets user navigate to push, pull, legs or other entry forms
+> form allows user to enter their lifting data, recorded either in json on the server or sql server 
+  database depending on branch
+
+developer flow
+> hosted on aws?
+> nodejs express server serves (get) user's lifting data at /
+> user can navigate to a logging form at /push, /pull, /legs or /other and submit (post) their 
+  lifting data
+> data is recorded in json on the server or in sql server database
+> user can navigate to /push/volume, /pull/volume, etc. and view their volume (reps * sets per 
+  session) for each type of lift
