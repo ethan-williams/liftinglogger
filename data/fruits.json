@@ -2,7 +2,7 @@
 	"fruits": [
 		{
 			"name": "grape",
-			"force": 0,
+			"force": 1,
 			"comment": "You can smush a grape with your thighs! Solid!"
 		},
 		{
